@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+/* Importing the 'Lato' font from Google Fonts */
+
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  /* Custom CSS variable for consistent box shadows */
+}
+
+* {
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+body {
+  background-color: #f7f7f7; /* Light grey background color for the body */
+  display: flex; /* Using flexbox for layout */
+  flex-direction: column; /* Stacking elements vertically */
+  align-items: center; /* Centering items horizontally */
+  justify-content: center; /* Centering items vertically */
+  min-height: 100vh; /* Minimum height of viewport */
+  margin: 0; /* Removing default margin */
+  font-family: "Lato", sans-serif; /* Setting the default font family */
+  font-size: 18px; /* Setting the default font size */
+}
+
+.container {
+  margin: 30px auto; /* Margin at top and bottom with automatic horizontal margins */
+  width: 400px; /* Width of the container */
+}
+
+h1 {
+  letter-spacing: 1px; /* Space between letters for h1 */
+  margin: 0; /* Removing default margin for h1 */
+}
+
+h3 {
+  border-bottom: 1px solid #bbb; /* Bottom border for h3 */
+  padding-bottom: 10px; /* Padding below the text for h3 */
+  margin: 40px 0 10px; /* Margin around h3 */
+}
+
+h4 {
+  margin: 0; /* Removing default margin for h4 */
+  text-transform: uppercase; /* Uppercase text for h4 */
+}
+
+.inc-exp-container {
+  background-color: #fff; /* White background for income and expense container */
+  box-shadow: var(--box-shadow); /* Applying the custom box shadow */
+  padding: 20px; /* Padding inside the container */
+  display: flex; /* Using flexbox for layout */
+  justify-content: space-between; /* Space out child elements */
+  margin: 20px 0; /* Margin above and below the container */
+}
+
+.inc-exp-container > div {
+  flex: 1; /* Flex grow to take up available space */
+  text-align: center; /* Centering text */
+}
+
+.inc-exp-container > div:first-of-type {
+  border-right: 1px solid #dedede; /* Right border for the first div */
+}
+
+.money {
+  font-size: 20px; /* Font size for money values */
+  letter-spacing: 1px; /* Space between letters */
+  margin: 5px 0; /* Margin above and below */
+}
+
+.money.plus {
+  color: #2ecc71; /* Green color for positive money values */
+}
+
+.money.minus {
+  color: #c0392b; /* Red color for negative money values */
+}
+
+label {
+  display: inline-block; /* Allowing margin to be applied */
+  margin: 10px 0; /* Margin above and below the label */
+}
+
+input[type="text"],
+input[type="number"] {
+  border: 1px solid #dedede; /* Border around inputs */
+  border-radius: 2px; /* Rounded corners */
+  display: block; /* Ensuring inputs are block elements */
+  font-size: 16px; /* Font size */
+  padding: 10px; /* Padding inside inputs */
+  width: 100%; /* Full width */
+}
+
+.btn {
+  cursor: pointer; /* Pointer cursor on hover */
+  background-color: #9c88ff; /* Purple background */
+  box-shadow: var(--box-shadow); /* Custom box shadow */
+  color: #fff; /* White text */
+  border: 0; /* Removing default border */
+  display: block; /* Ensuring button is a block element */
+  font-size: 16px; /* Font size */
+  margin: 10px 0 30px; /* Margin around button */
+  padding: 10px; /* Padding inside button */
+  width: 100%; /* Full width */
+}
+
+.btn:focus,
+.delete-btn:focus {
+  outline: 0; /* Removing default focus outline */
+}
+
+.list {
+  list-style-type: none; /* Removing default list style */
+  padding: 0; /* Removing default padding */
+  margin-bottom: 40px; /* Bottom margin */
+}
+.list li {
+  background-color: #fff; /* White background for list items */
+  box-shadow: var(--box-shadow); /* Shadow effect for depth */
+  color: #333; /* Dark color for text */
+  display: flex; /* Flexbox layout for inner items */
+  justify-content: space-between; /* Space items within the list item */
+  position: relative; /* For absolute positioning of child elements */
+  padding: 10px; /* Padding inside each list item */
+  margin: 10px 0; /* Margin above and below each list item */
+}
+
+.list li.plus {
+  border-right: 5px solid #2ecc71; /* Green border on the right for positive transactions */
+}
+
+.list li.minus {
+  border-right: 5px solid #c0392b; /* Red border on the right for negative transactions */
+}
+
+.delete-btn {
+  cursor: pointer; /* Pointer cursor to indicate clickable */
+  background-color: #e74c3c; /* Red background for delete button */
+  border: 0; /* No border for a flat look */
+  color: #fff; /* White text for contrast */
+  font-size: 20px; /* Size of the text in the button */
+  line-height: 20px; /* Line height to match font size */
+  padding: 2px 5px; /* Padding inside the button */
+  position: absolute; /* Absolute positioning relative to parent */
+  top: 50%; /* Position at 50% from the top of parent */
+  left: 0; /* Align to the left of parent */
+  transform: translate(
+    -100%,
+    -50%
+  ); /* Center vertically and move to left outside of parent */
+  opacity: 0; /* Start invisible */
+  transition: opacity 0.3s ease; /* Transition effect for opacity */
+}
+
+.list li:hover .delete-btn {
+  opacity: 1; /* Fully visible when parent list item is hovered */
+}
